@@ -1,0 +1,88 @@
+	<div class="container home-container">
+			
+			<div class="sidebar col-md-5 col-sm-12 " ng-init="getCategories()">
+			
+              
+                <div class="site-info">
+                    <div class="primary-info">
+                    <h1>Writer</h1>
+                        <p>A minimal blogging theme to put your content on show. <a href="post.html">Look at the features.</a> </p>
+
+                        <p>Content is king</p>
+                    </div>
+                    <div class="secondary-info">
+
+                        <p><a class="btn btn-writer btn-post" href="/signup"><i class="entypo-doc-text"></i>Join Us</a> or <a href="/blogs/create">Share your story</a></p>
+                    </div>
+                </div>
+            </div>             		
+            
+            <div class="col-md-7 col-sm-12 col-md-offset-5 main-content">
+                <div class="nav">
+                    <a href="#" class="select-posts active">Posts</a>
+                    <a href="#" class="select-categories">Collections</a>
+                </div>
+
+                <div class="home-page-posts animated fadeIn" ng-init="find()" >
+                <div class="post" ng-repeat="blog in blogs">
+                    <section>
+                        <div class="post-preview col-xs-10  no-gutter">
+
+                        <h2><a href="blogs/{{blog._id}}" ng-bind-html='blog.title'></a></h2>
+                        <p> </p>
+
+                        <p class="meta">                       
+                            <a class="" href="profile/{{blog.creator.username}}">{{blog.creator.username}}</a> in 
+                            <i class="link-spacer"></i>{{blog.collectionid.description}} <i class="entypo-bookmark"></i> 
+                        </p>
+                        </div>
+
+                        <div class=" col-xs-2  no-gutter">
+                            <img ng-src="assets/img/seed/{{profile.userid}}/profile_pic_small.jpg" class="user-icon user-1" alt="user-image">
+                        </div>
+
+                    </section>
+                </div>
+			</div><!-- Home page posts -->
+
+            <div class="home-page-categories hide animated fadeIn ">
+                <div class="category row">
+                    <section>
+                        <div class="category-preview col-xs-6 col-sm-4 " ng-repeat="category in categoryList">
+                            <h2>{{category.categoryname}}</h2>                            
+                            <a href="#/category/{{category.categoryid}}"><img ng-src="assets/img/cover-{{category._id}}.jpg" alt="category-image"></a>
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+            <div class="home-footer">
+                <a href="post.html"> About </a>
+                <i class="link-spacer"></i>
+                <a href="post.html"> Writer 2014 </a>
+
+            </div>
+
+            </div>
+            
+           </div> 
+            
+              <script>
+        $( document ).ready(function() {       		
+        	 $('.select-posts,.select-categories').on('click', function () {        		
+                 $('.home-page-posts').toggleClass("hide");
+                 $('.home-page-categories').toggleClass("hide");
+
+                 $('.select-posts').toggleClass("active");
+                 $('.select-categories').toggleClass("active");
+
+                 $('.home-footer').toggleClass("hide");
+             });
+
+             $('.writer-icon').on('click', function () {
+                 $(this).addClass("fadeOutUp");
+             });
+        });       
+        </script>       
+            
+            

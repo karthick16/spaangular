@@ -1,0 +1,40 @@
+	
+	<div ng-include="'partials/navbar.html'"></div>
+	<div ng-init="findOneEdit()">		
+		<div class="heroEditable">
+			<div class="hero-image hero-a-great-story" style="background:url('/uploads/post/aspectratio/{{blog._id}}_posthero.jpg') no-repeat center center fixed;background-size:cover"></div>
+			<p></p>				
+		</div>
+   	
+        <div class="container">
+        <div class="row">        
+        <div class="col-xs-12 main-content single-content">       	
+        
+            Collections : <select ng-model="collectionid" ng-options="category.categoryid as category.categoryname for category in categories"></select>       
+        	        
+            <p class="meta">
+                <a class="" href="category.html">{{blog.name}}</a> in <a class="" href="category.html">{{blog.categoryname}}</a> <i class="link-spacer"></i> <i class="entypo-bookmark"></i> 23 minute read
+            </p>
+            
+            <h1 class="title-editable" ng-bind-html='blog.title'></h1>            
+            <div class="editable" ng-bind-html='blog.content'> 
+            	
+			</div>
+		
+        <div class="single-footer">
+            <div class="social clearfix">
+                <a class="btn btn-writer btn-like" ng-click="update()"><i class="entypo-heart"></i>Update</a>
+            </div>
+        </div>
+        </div><!-- main-content/col -->
+        </div> <!--/row -->
+    </div> <!-- /container -->
+    </div>
+    
+    <link rel="stylesheet" href="vendor/medium/css/medium-editor.min.css"> <!-- Medium Core -->
+<link rel="stylesheet" href="vendor/medium/css/themes/default.css">
+<link rel="stylesheet" href="vendor/medium-insert/css/medium-editor-insert-plugin.css">
+<script src="vendor/medium/js/medium-editor.js"></script>     
+<script src="vendor/medium-insert/js/addons/medium-editor-insert-plugin.js"></script>
+<script src="vendor/medium-insert/js/addons/medium-editor-insert-images.js"></script> 
+    

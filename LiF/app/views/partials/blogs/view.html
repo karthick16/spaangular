@@ -1,0 +1,30 @@
+<div ng-include="'partials/navbar.html'"></div>	
+<div ng-init="findOne()">
+		<div class="heroEditable">
+			<p></p>
+			<div class="hero-image hero-a-great-story" style="background:url('/uploads/post/aspectratio/{{blog._id}}_posthero.jpg') no-repeat center center fixed;background-size:cover"></div>		
+		</div>
+        <div class="container">
+        <div class="row">       
+        <div class="col-xs-12 main-content single-content">	
+        	<p class="meta">
+        	
+              <span class="pull-right">Posted {{blog.created | date:'medium'}} by {{blog.creator.username}}</span>
+        	  <h2><a ng-show="currentUser._id == blog.creator._id" href="/blogs/{{blog._id}}/edit">Edit</a></h2>
+        	  <b>Collections : {{blog.collectionid.description}}</b>	
+            </p>		
+            <h1 class="title-editable" ng-bind-html='blog.title'></h1>
+            <div class="editable" ng-bind-html='blog.content'>
+		</div>		
+        </div><!-- main-content/col -->
+        </div> <!--/row -->
+    </div> <!-- /container -->
+ </div>   
+ 
+ <link rel="stylesheet" href="vendor/medium/css/medium-editor.min.css"> <!-- Medium Core -->
+<link rel="stylesheet" href="vendor/medium/css/themes/default.css">
+<link rel="stylesheet" href="vendor/medium-insert/css/medium-editor-insert-plugin.css">
+<script src="vendor/medium/js/medium-editor.js"></script>     
+<script src="vendor/medium-insert/js/addons/medium-editor-insert-plugin.js"></script>
+<script src="vendor/medium-insert/js/addons/medium-editor-insert-images.js"></script> 
+ 

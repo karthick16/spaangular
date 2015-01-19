@@ -1,0 +1,41 @@
+
+
+<div ng-include="'partials/navbar.html'"></div>
+<div ng-init="generateBlogId()">
+	
+		<div class="heroEditable">
+			<p></p>
+			<div class="hero-image hero-a-great-story"></div>			
+		</div>
+    
+        <div class="container">
+        <div class="row">        	
+        <div class="col-xs-12 main-content single-content">  
+        
+        	Collections : <select ng-model="collectionid" ng-options="category._id as category.categoryname for category in categories"></select>
+              
+            <h2 class="title-editable"></h2>
+            <div class="editable"> 
+            <p>
+            Write your story here.
+            </p>       
+            </div>
+        </div><!-- main-content/col -->
+        </div> <!--/row -->
+          	<div class="social clearfix">
+                <a class="btn btn-writer btn-like" ng-click="update()"><i class="entypo-heart"></i>Save</a>
+            </div>
+    </div> <!-- /container -->
+</div>
+
+
+<link rel="stylesheet" href="vendor/medium/css/medium-editor.min.css"> <!-- Medium Core -->
+<link rel="stylesheet" href="vendor/medium/css/themes/default.css">
+<link rel="stylesheet" href="vendor/medium-insert/css/medium-editor-insert-plugin.css">
+<script src="vendor/medium/js/medium-editor.js"></script>     
+<script src="vendor/medium-insert/js/addons/medium-editor-insert-plugin.js"></script>
+<script src="vendor/medium-insert/js/addons/medium-editor-insert-images.js"></script> 
+<script src="vendor/medium-insert/js/addons/medium-editor-insert-embeds.js"></script>
+
+
+

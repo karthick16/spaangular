@@ -1,0 +1,65 @@
+
+<div ng-include="'partials/navbar.html'"></div>
+
+<div class="container home-container" ng-init="initProfileCtrl()">
+        <div class="row">
+            <div class="sidebar sidebar-fav col-md-5 col-sm-12 " style="left: 0px;">                
+                <!-- end no script -->
+                <div class="site-info">
+                    <div class="primary-info">
+                    <h1>Writer</h1>
+                        <p>A minimal blogging theme to put your content on show. <a href="post.html">Look at the features.</a> </p>
+
+                        <p>Content is king</p>
+                    </div>
+                    <div class="secondary-info">
+
+                        <p><a class="btn-writer btn-post" href="#"><i class="entypo-doc-text"></i>Join Us</a> or <a href="#">Share your story</a></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-7 col-sm-12 col-md-offset-5 main-content">
+
+                <div class="favorites">
+                    <h2>Your favorite posts</h2>
+                </div>
+
+                <div class="favorite-posts clearfix animated fadeIn ">
+
+                    <section>
+                        <div class="post-favorite col-xs-12 col-sm-6  no-gutter" ng-repeat="blog in blogs">
+                        <h2><a href="blogs/{{blog._id}}" ng-bind-html='blog.title'></a></h2>
+                         
+           				 <span class="badge badge-success">Posted {{blog.created | date:'medium'}}</span>            			
+        				 
+                        <p> </p>
+                        </div>
+                    </section>
+
+
+            </div><!-- Home page posts -->
+
+            <div class="favorites">
+                    <h2> Your favorite Collections </h2>
+            </div>
+
+            <div class="favorite-categories animated fadeIn ">
+                <div class="category row">
+                    <section>
+                        <div class="category-preview col-xs-6 col-sm-4 " ng-repeat="category in categoryList">
+                            <h2>{{category.categoryname}}</h2>                            
+                            <a href="#/category/{{category.categoryid}}"><img ng-src="assets/img/cover-{{category._id}}.jpg" alt="category-image"></a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="home-footer">
+                <a href="post.html"> About </a>
+                <i class="link-spacer"></i>
+                <a href="post.html"> Writer 2014 </a>
+            </div>
+            </div><!-- main content -->
+        </div> <!--/row -->
+</div>
