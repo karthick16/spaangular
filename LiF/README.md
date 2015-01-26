@@ -1,1 +1,0 @@
-Angular SPA with Mean stack.

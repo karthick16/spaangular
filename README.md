@@ -1,3 +1,1 @@
-# spaangular
-SPA angular scaffolding
-Medium inspired blogging platform with Mean stack.
+Angular SPA with Mean stack.
